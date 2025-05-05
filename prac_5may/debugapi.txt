@@ -1,0 +1,2 @@
+source .venv/bin/activate.fish
+curl -X POST -F "file=@trucks.jpg" http://localhost:8000/detect/ --output result.png
