@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Processor</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <!-- Upload Page -->
+  <div id="upload-page">
+    <div class="upload-zone">
+      <form class="form-upload" id="uploadForm" method="post" enctype="multipart/form-data">
+        <div class="upload-zone_dragover">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" 
+               stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="upload-loader__image">
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242M12 12v9"/>
+            <path d="m16 16-4-4-4 4"/>
+          </svg>
+          <p>Перетащи файл сюда</p>
+          <span class="form-upload__hint" id="hint">Можно загружать только картинки</span>
+        </div>
+        <label class="form-upload__label" for="uploadForm_file">
+          <span class="form-upload__title">Или нажми кнопку</span>
+          <input class="form-upload__input" id="uploadForm_File" type="file" name="file_name" 
+                 accept="image/*" aria-describedby="hint"/>
+        </label>
+        <div class="form-upload__container">
+          <span class="form-upload__hint" id="uploadForm_Hint"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Result Page -->
+  <div id="result-page">
+    <div class="result-container">
+      <img id="result-image" class="result-image" alt="Processed image"/>
+      <div class="report-buttons">
+        <button onclick="downloadReport('pdf')">Загрузить PDF отчет</button>
+        <button onclick="downloadReport('excel')">Загрузить Excel отчет</button>
+      </div>
+      <button class="back-button" id="backButton">Вернуться к загрузке</button>
+    </div>
+  </div>
+
+  <script src="src/main.js" type="module"></script>
+</body>
+</html>
